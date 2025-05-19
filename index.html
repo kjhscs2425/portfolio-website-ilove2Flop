@@ -4,8 +4,40 @@
     <title>Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #007BFF; /* Blue background */
+        color: white;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding: 40px;
+      }
+
+      .section {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        grid-column: span 2;
+        text-align: center;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+    </style>
   </head>
+
   <body>
     <!-- Import header from `header.html`-->
     <header id="header"></header>
@@ -13,18 +45,38 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('#header').load('./header.html', function() {
-          $('.content').css("display", "block");
+          $('.content').css("display", "grid");
         })
       })
     </script>
 
     <div class="content">
-    <!-- Your HTML starts here-->
-    <h1>Homepage of my portfolio website</h1>
-    <p>You decorate this and write whatever you want to for the homepage</p>
-    <p>(avoid photos and identifying information about yourself)</p>
-    <!-- Your HTML ends here-->
-    </div>
+      <!-- Page title -->
+      <h1>Homepage of My Portfolio Website</h1>
 
+      <!-- Section 1 -->
+      <div class="section">
+        <h2>About Me</h2>
+        <p>Introduce yourself briefly and mention what you're passionate about.</p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section">
+        <h2>Projects</h2>
+        <p>Summarize a few key projects you've worked on (no personal details).</p>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section">
+        <h2>Skills</h2>
+        <p>List your technical or creative skills, tools, or languages.</p>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="section">
+        <h2>Goals</h2>
+        <p>Share what you're working toward or hope to learn in the future.</p>
+      </div>
+    </div>
   </body>
 </html>
